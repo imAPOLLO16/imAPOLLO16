@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Recommendations | Vanilla Javascript</title>
+        <link rel="icon" href="favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Cinematique</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Romance</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Horror</a></li>
+                <li><a href="#">Sci-Fi</a></li>
+                <li><a href="#">Fantasy</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Comedy</a></li>
+                <li><a href="#">Documentary</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="Century_Fox.jpeg" id="Century_Fox">
+            <img src="audience_behind.png" id="audience_behind">
+            <h2 id="text">Cinematique</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src="Curtain_front.png" id="Curtain_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>About Us</h2>
+            <p>Welcome to Cinematique, your go-to platform for top-rated movies and TV shows. Our website is designed to make your movie selection experience easy and enjoyable. We provide personalized recommendations based on your preferences and movie genres, making sure that you discover new movies that align with your taste.
+            <br><br>Our team of movie experts provides in-depth reviews and analysis of each film, giving you a better understanding of the quality and content before you hit the play button. We also have curated lists of movies for different occasions, such as date night, family movie night, and the holiday season. These lists 
+            help you discover new movies that fit the mood and enhance the viewing experience.<br><br>At Cinematique, we are passionate about movies from different regions and cultures, and we offer a wide range of recommendations. Our goal is to make sure that you have access to information about the best movies from all around
+            the world, helping you to explore different cultures and discover new movies that you wouldn't have known otherwise. Read now to explore the world of movies and find your next favorite film at Cinematique!</p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let Century_Fox = document.getElementById('Century_Fox');
+            let audience_behind = document.getElementById('audience_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('bnt');
+            let Curtain_front = document.getElementById('Curtain_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';  
+                audience_behind.style.top = value * 0.5 + 'px';
+                Curtain_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginRight = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>
